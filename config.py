@@ -20,7 +20,7 @@ class Development(Config):
 
 class Production(Config):
     # MongoDB Database Details
-    MONGODB_DB = "iky-ai"
+    MONGODB_DB = "medi-bot"
     MONGODB_HOST = "mongodb"
     MONGODB_PORT = 27017
     MONGODB_USERNAME = ""
