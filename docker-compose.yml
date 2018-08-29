@@ -1,0 +1,29 @@
+version: '2'
+services:
+  backend:
+    container_name: backend
+    build: .
+    environment:
+      APPLICATION_ENV: Production
+    depends_on:
+      - mongodb
+
+  frontend:
+    container_name: frontend
+    build: frontend/
+    ports:
+        - "8080:80"
+    depends_on:
+      - backend
+
+  mongodb:
+    container_name: mongodb
+    image: mongo
+    hostname: mongodb
+    ports:
+       - "27017:27017"
+    volumes:
+      - mongodbdata:/data
+
+volumes:
+  mongodbdata:
